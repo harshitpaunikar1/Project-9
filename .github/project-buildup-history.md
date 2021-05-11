@@ -20,3 +20,7 @@
 
 - Task summary: After stepping away for a bit, came back and pushed a config tweak after noticing the wrong default param was being used.
 - Deliverable: Nothing dramatic — just keeping things tidy.
+## 2021-05-11 - Day 3: Cleaning pass
+
+- Task summary: Spent another hour on this: added inline comments in the dense sections — would have been confusing to revisit without them.
+- Deliverable: Pushed before end of day.
