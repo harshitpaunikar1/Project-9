@@ -28,3 +28,7 @@
 
 - Task summary: After stepping away for a bit, came back and fixed a type coercion issue that was causing silent NaN propagation downstream.
 - Deliverable: Good enough to not be embarrassing.
+## 2021-05-12 - Day 4: EDA
+
+- Task summary: By this point I had the rough direction, so the work became more practical. I spent most of the day triyng to plot the major signals and note which variables matter most and make the whole thing feel less half baked. The middle part always takes longer than it should, mostly becuase one fix usually reveals two more things to clean up. I kept bouncing between the notebook, small observations, and quick plots until the direction felt usable.
+- Deliverable: I wrapped up the day with eDA summary mostly in place. It was not perfect, but it was good enough to keep the project moving. There were still a couple of loose parts, but nothing serious enough to block the next step.
