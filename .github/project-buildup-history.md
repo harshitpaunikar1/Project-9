@@ -36,3 +36,7 @@
 
 - Task summary: This was the middle stretch where the project started feeling real. I kept going and tried to choose the target and prepare the model input features, then cleaned up whatever looked confusing or weak from the earlier days. By now I had enough structure to keep going without staring at the screen too long, which honestly helped a lot. Most of the progress here came from patient cleanup more than anything flashy.
 - Deliverable: Ended the day with feature set in hand, plus a few side notes on what still needed fixing later. It was not super polished, just stable enough that I felt okay moving forward.
+## 2021-05-13 - Day 5: Feature prep
+
+- Task summary: After stepping away for a bit, came back and went back and reorganized the config section so values are not buried mid-script.
+- Deliverable: Should've caught it earlier but better now than later.
