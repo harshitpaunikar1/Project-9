@@ -48,3 +48,7 @@
 
 - Task summary: This was the middle stretch where the project started feeling real. I kept going and tried to train a simple baseline and record its performance, then cleaned up whatever looked confusing or weak from the earlier days. Once the base made some sense, I could finally move a bit faster and stop second guessing every tiny decision. A lot of this also meant checking if the numbers were making sense and not just trusting the first result that showed up.
 - Deliverable: Ended the day with baseline results in hand, plus a few side notes on what still needed fixing later. I also left myself a few rough reminders for the next day so I would not have to rediscover the same context again.
+## 2021-05-15 - Day 6: Baseline model
+
+- Task summary: Half-day Saturday session. Decided to finish the README section I skipped on Friday — cleaner now.
+- Deliverable: Wrapped it up properly this time.
