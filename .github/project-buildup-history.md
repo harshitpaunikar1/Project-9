@@ -52,3 +52,7 @@
 
 - Task summary: Half-day Saturday session. Decided to finish the README section I skipped on Friday — cleaner now.
 - Deliverable: Wrapped it up properly this time.
+## 2021-05-17 - Day 7: Model improvement
+
+- Task summary: This was the middle stretch where the project started feeling real. I kept going and tried to try a stronger model or tune the main parameters, then cleaned up whatever looked confusing or weak from the earlier days. The middle part always takes longer than it should, mostly becuase one fix usually reveals two more things to clean up. I kept bouncing between the notebook, small observations, and quick plots until the direction felt usable.
+- Deliverable: Ended the day with improved model in hand, plus a few side notes on what still needed fixing later. There were still a couple of loose parts, but nothing serious enough to block the next step.
