@@ -64,3 +64,7 @@
 
 - Task summary: Spent another hour on this: the test I wrote this morning had a hardcoded path, swapped it for a relative one.
 - Deliverable: One of those satisfying small wins.
+## 2021-05-18 - Day 8: Evaluation
+
+- Task summary: Came back after lunch and realized pushed a config tweak after noticing the wrong default param was being used.
+- Deliverable: Nothing dramatic — just keeping things tidy.
