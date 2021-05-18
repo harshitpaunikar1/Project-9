@@ -68,3 +68,7 @@
 
 - Task summary: Came back after lunch and realized pushed a config tweak after noticing the wrong default param was being used.
 - Deliverable: Nothing dramatic — just keeping things tidy.
+## 2021-05-18 - Day 8: Evaluation
+
+- Task summary: Quick follow-up: added one more evaluation metric that felt missing from the earlier comparison.
+- Deliverable: Small fix, clean result.
