@@ -72,3 +72,7 @@
 
 - Task summary: Quick follow-up: added one more evaluation metric that felt missing from the earlier comparison.
 - Deliverable: Small fix, clean result.
+## 2021-05-19 - Day 9: Storytelling check
+
+- Task summary: Closer to the end, I was mostly tightening things up instead of inventing new scope. The job for the day was to translate the result into plain language for a non-technical reader so the final result looked a bit more complete. I was not trying to add anything fancy here, just making sure the thing looked complete enough to show someone. A lot of this also meant checking if the numbers were making sense and not just trusting the first result that showed up.
+- Deliverable: Ended the day with business takeaway in hand, plus a few side notes on what still needed fixing later. I also left myself a few rough reminders for the next day so I would not have to rediscover the same context again.
