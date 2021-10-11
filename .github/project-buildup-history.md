@@ -16,3 +16,7 @@
 
 - Task summary: Spent an extra hour adding a Ridge and Lasso baseline alongside the OLS so the cross-validation comparison would be more meaningful across regularization strength.
 - Deliverable: Ridge and Lasso baselines added to comparison set.
+## 2021-10-11 - Day 3: Baseline regression
+
+- Task summary: Late-night fix: caught that the categorical features were being passed as-is to the linear model without encoding. Added one-hot encoding into the fold loop properly.
+- Deliverable: One-hot encoding now inside the fold loop. No more dtype warnings.
