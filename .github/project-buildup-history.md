@@ -12,3 +12,7 @@
 
 - Task summary: Implemented the OLS baseline for the cross-validation study today. Set up a clean train/test split first and trained a plain linear regression. The RMSE was acceptable but the residual plot showed clear heteroscedasticity — the errors grew with the predicted value. That is worth noting as a limitation but not blocking the cross-validation comparison work. Started setting up the k-fold structure and got through 5-fold working with the baseline coefficients logged per fold.
 - Deliverable: Baseline OLS done. Heteroscedasticity noted. 5-fold scaffold up.
+## 2021-10-11 - Day 3: Baseline regression
+
+- Task summary: Spent an extra hour adding a Ridge and Lasso baseline alongside the OLS so the cross-validation comparison would be more meaningful across regularization strength.
+- Deliverable: Ridge and Lasso baselines added to comparison set.
