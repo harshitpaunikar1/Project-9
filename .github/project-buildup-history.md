@@ -20,3 +20,7 @@
 
 - Task summary: Late-night fix: caught that the categorical features were being passed as-is to the linear model without encoding. Added one-hot encoding into the fold loop properly.
 - Deliverable: One-hot encoding now inside the fold loop. No more dtype warnings.
+## 2021-11-15 - Day 5: Cross-validation result analysis
+
+- Task summary: Spent today analyzing the cross-validation results for the linear regression study. The mean and standard deviation of RMSE across folds were reasonable but there was one fold that consistently performed worse than the others. Investigated and found that fold happened to include a cluster of high-value outlier properties that the model underpredicts systematically. Added a note about this in the analysis and ran the same study with stratified splits to see if it helped.
+- Deliverable: Fold instability traced to outlier cluster. Stratified splits reduce variance across folds.
