@@ -74,7 +74,7 @@
       .essay-head, .essay-body { padding-left: 1.5rem; padding-right: 1.5rem; }
     }
 
-    /* h2: bold underlined claim — a statement, not a neutral label */
+    /* h2: bold underlined claim - a statement, not a neutral label */
     h2 {
       font-family: var(--serif);
       font-size: clamp(1.1rem, 2vw, 1.4rem);
@@ -194,7 +194,7 @@
 <div class="essay-head">
   <p class="topic-tag">Method Critique &nbsp;·&nbsp; Model Evaluation &nbsp;·&nbsp; Cross-Validation</p>
   <h1>Cross-Validation Does Not Guarantee a Honest Model</h1>
-  <p class="deck">Using k-fold is not the same as having a valid error estimate. Three silent mistakes — preprocessing leakage, temporal contamination, and threshold shopping across folds — produce optimistic CV scores on models that will fail in production.</p>
+  <p class="deck">Using k-fold is not the same as having a valid error estimate. Three silent mistakes - preprocessing leakage, temporal contamination, and threshold shopping across folds - produce optimistic CV scores on models that will fail in production.</p>
 </div>
 
 <!-- ════════════ ESSAY BODY ════════════ -->
@@ -202,7 +202,7 @@
 
   <h2>The single-split problem is real, and people really do use it wrong</h2>
 
-  <p>The conventional introduction to train-test splits involves splitting your data once — 80 percent train, 20 percent test — fitting a model on the training set, and reporting the metric on the held-out set. The problem is variance: with a single split on a moderately sized dataset, the test score is a function not only of the model's quality but also of which specific examples landed in the test set. An unlucky split can make a good model look bad; a lucky split can make a bad model look good.</p>
+  <p>The conventional introduction to train-test splits involves splitting your data once - 80 percent train, 20 percent test - fitting a model on the training set, and reporting the metric on the held-out set. The problem is variance: with a single split on a moderately sized dataset, the test score is a function not only of the model's quality but also of which specific examples landed in the test set. An unlucky split can make a good model look bad; a lucky split can make a bad model look good.</p>
 
   <p>This is not a theoretical concern. On a 500-row dataset, a random 20 percent split gives a test set of 100 rows. The standard error of a proportion-based metric on 100 samples is substantial. If you report a test R² of 0.81, the true generalization R² could plausibly be anywhere from 0.73 to 0.88 depending on the split. Reporting 0.81 as if it were a precise estimate is statistically unjustified.</p>
 
@@ -219,7 +219,7 @@
     <div class="diagram-scroll">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 310" width="760" style="max-width:100%;display:block;">
         <rect width="760" height="310" fill="#fff"/>
-        <text x="30" y="22" font-family="IBM Plex Mono,monospace" font-size="9" fill="#888" letter-spacing="1.5">FIG. 1A — K-FOLD MECHANISM (k=5) · FIG. 1B — LEAKAGE ANTI-PATTERN</text>
+        <text x="30" y="22" font-family="IBM Plex Mono,monospace" font-size="9" fill="#888" letter-spacing="1.5">FIG. 1A - K-FOLD MECHANISM (k=5) · FIG. 1B - LEAKAGE ANTI-PATTERN</text>
 
         <!-- ════ LEFT: K-FOLD RIBBON ════ -->
         <!-- Dataset bar split into 5 folds -->
@@ -284,13 +284,13 @@
 
         <!-- ════ RIGHT: LEAKAGE ANTI-PATTERN ════ -->
         <line x1="30" y1="250" x2="740" y2="250" stroke="#ddd" stroke-width="1"/>
-        <text x="30" y="268" font-family="IBM Plex Sans,sans-serif" font-size="9.5" font-weight="600" fill="#111">FIG. 1B — LEAKAGE ANTI-PATTERN: SCALER FIT ON FULL DATASET</text>
+        <text x="30" y="268" font-family="IBM Plex Sans,sans-serif" font-size="9.5" font-weight="600" fill="#111">FIG. 1B - LEAKAGE ANTI-PATTERN: SCALER FIT ON FULL DATASET</text>
 
         <!-- Full dataset box -->
         <rect x="30" y="278" width="200" height="22" fill="#f0f0f0" stroke="#888"/>
         <text x="130" y="293" font-family="IBM Plex Mono,monospace" font-size="8.5" fill="#555" text-anchor="middle">FULL DATASET</text>
 
-        <!-- Scaler fit arrow — leaks to val fold -->
+        <!-- Scaler fit arrow - leaks to val fold -->
         <line x1="230" y1="289" x2="285" y2="289" stroke="#111" stroke-width="2.5"/>
         <polygon points="282,284 292,289 282,294" fill="#111"/>
         <rect x="292" y="278" width="120" height="22" fill="#111"/>
@@ -305,7 +305,7 @@
         <rect x="474" y="278" width="80" height="22" fill="#555"/>
         <text x="514" y="293" font-family="IBM Plex Mono,monospace" font-size="8.5" fill="#fff" text-anchor="middle">TRAIN</text>
 
-        <!-- Val fold box — contaminated -->
+        <!-- Val fold box - contaminated -->
         <rect x="560" y="278" width="80" height="22" fill="#333"/>
         <text x="600" y="293" font-family="IBM Plex Mono,monospace" font-size="8.5" fill="#fff" text-anchor="middle">VAL ⚠</text>
 
@@ -316,10 +316,10 @@
         <text x="650" y="300" font-family="IBM Plex Mono,monospace" font-size="8" fill="#111">OPTIMISTIC</text>
       </svg>
     </div>
-    <figcaption><em>Fig. 1 — Top: correct 5-fold mechanism. Each pass uses a fresh, non-overlapping validation fold; the model sees only the training folds during fitting. Bottom: the most common leakage anti-pattern — fitting a scaler (or any stateful transformer) on the full dataset before splitting means the validation fold contains information from its own scaling statistics, contaminating the performance estimate. The resulting CV score is optimistic: the model appears to generalize better than it actually does.</em></figcaption>
+    <figcaption><em>Fig. 1 - Top: correct 5-fold mechanism. Each pass uses a fresh, non-overlapping validation fold; the model sees only the training folds during fitting. Bottom: the most common leakage anti-pattern - fitting a scaler (or any stateful transformer) on the full dataset before splitting means the validation fold contains information from its own scaling statistics, contaminating the performance estimate. The resulting CV score is optimistic: the model appears to generalize better than it actually does.</em></figcaption>
   </figure>
 
-  <h2>Preprocessing leakage is the most common way to break CV — and the easiest to miss</h2>
+  <h2>Preprocessing leakage is the most common way to break CV - and the easiest to miss</h2>
 
   <p>The fold schematic shows the correct mechanism. Now consider what happens when a practitioner does the following:</p>
 
@@ -329,9 +329,9 @@
     <li style="margin-bottom:0.5rem;">Then run 5-fold cross-validation on the transformed data.</li>
   </ol>
 
-  <p>This sequence looks correct because the CV loop is technically executed. It is not correct. The scaler was fit on the full dataset, including the examples that will become validation folds. The scaling statistics — mean and standard deviation — therefore contain information from the validation fold. When the model is evaluated on the validation fold, it is seeing data that was already partially processed using information from that same fold. The validation set is no longer truly held out.</p>
+  <p>This sequence looks correct because the CV loop is technically executed. It is not correct. The scaler was fit on the full dataset, including the examples that will become validation folds. The scaling statistics - mean and standard deviation - therefore contain information from the validation fold. When the model is evaluated on the validation fold, it is seeing data that was already partially processed using information from that same fold. The validation set is no longer truly held out.</p>
 
-  <p>How large is the resulting bias? It depends on the dataset. For large datasets (tens of thousands of rows), the effect is small because each fold's contribution to the scaling statistics is minor. For small datasets (a few hundred rows), the leakage can be substantial — enough to shift a CV score by several percentage points.</p>
+  <p>How large is the resulting bias? It depends on the dataset. For large datasets (tens of thousands of rows), the effect is small because each fold's contribution to the scaling statistics is minor. For small datasets (a few hundred rows), the leakage can be substantial - enough to shift a CV score by several percentage points.</p>
 
 <pre><code class="language-python">from sklearn.pipeline import Pipeline
 from sklearn.preprocessing import StandardScaler
@@ -344,7 +344,7 @@ X_scaled = scaler.fit_transform(X)  # leaks val statistics into scaler
 scores_wrong = cross_val_score(LinearRegression(), X_scaled, y, cv=5)
 # scores_wrong will be optimistically biased
 
-# CORRECT: scaler wrapped in Pipeline — fits only on train folds
+# CORRECT: scaler wrapped in Pipeline - fits only on train folds
 pipe = Pipeline([
     ('scaler', StandardScaler()),
     ('model',  LinearRegression())
@@ -355,12 +355,12 @@ scores_correct = cross_val_score(pipe, X, y, cv=5)
 
   <div class="callout">
     <div class="callout-label">Rule</div>
-    <p><strong>Every stateful preprocessing step — scaler, imputer, encoder, feature selector — must be inside a Pipeline when used with cross_val_score.</strong> If it is fit outside the Pipeline, it has seen the validation data and the CV estimate is contaminated. This rule has no exceptions for "small" transformations or "probably doesn't matter" arguments.</p>
+    <p><strong>Every stateful preprocessing step - scaler, imputer, encoder, feature selector - must be inside a Pipeline when used with cross_val_score.</strong> If it is fit outside the Pipeline, it has seen the validation data and the CV estimate is contaminated. This rule has no exceptions for "small" transformations or "probably doesn't matter" arguments.</p>
   </div>
 
   <h2>Temporal data breaks the random-split assumption entirely</h2>
 
-  <p>k-fold with random shuffling assumes that observations are exchangeable — that the order in which they appear in the dataset is irrelevant. For cross-sectional data (housing prices, customer demographics, product attributes), this assumption is usually defensible. For time-series data or any data with a temporal ordering — stock prices, customer behavior sequences, demand forecasts, loan repayment histories — it is not.</p>
+  <p>k-fold with random shuffling assumes that observations are exchangeable - that the order in which they appear in the dataset is irrelevant. For cross-sectional data (housing prices, customer demographics, product attributes), this assumption is usually defensible. For time-series data or any data with a temporal ordering - stock prices, customer behavior sequences, demand forecasts, loan repayment histories - it is not.</p>
 
   <p>When you randomly shuffle a time series and apply standard k-fold, you create a situation where validation folds contain data from <em>earlier</em> time periods than some of the training folds. The model is, in effect, being trained on the future to predict the past. The validation score will be optimistic because the model is exploiting temporal patterns that would not be available in a real forward-looking deployment.</p>
 
@@ -372,7 +372,7 @@ scores_correct = cross_val_score(pipe, X, y, cv=5)
 tscv = TimeSeriesSplit(n_splits=5)
 
 for fold, (train_idx, val_idx) in enumerate(tscv.split(X)):
-    # train_idx always precedes val_idx in time — no lookahead
+    # train_idx always precedes val_idx in time - no lookahead
     X_train, X_val = X.iloc[train_idx], X.iloc[val_idx]
     y_train, y_val = y.iloc[train_idx], y.iloc[val_idx]
     # ... fit model, evaluate, record score
@@ -383,7 +383,7 @@ for fold, (train_idx, val_idx) in enumerate(tscv.split(X)):
 
   <p>This is the subtlest of the three problems and the most commonly overlooked. The standard workflow: try five different models (or five different hyperparameter settings), evaluate each with 5-fold CV, pick the one with the best CV score, and report that CV score as your performance estimate.</p>
 
-  <p>The problem: the model selection step has used the CV score as a criterion. You evaluated multiple candidates and chose the one that happened to perform best on the CV folds. Some of that "best" performance is luck — the chosen model fits the specific fold structure of your dataset. The reported CV score is now an optimistic estimate of how that model will generalize to genuinely unseen data, because the CV data was used both to estimate performance and to make the selection decision.</p>
+  <p>The problem: the model selection step has used the CV score as a criterion. You evaluated multiple candidates and chose the one that happened to perform best on the CV folds. Some of that "best" performance is luck - the chosen model fits the specific fold structure of your dataset. The reported CV score is now an optimistic estimate of how that model will generalize to genuinely unseen data, because the CV data was used both to estimate performance and to make the selection decision.</p>
 
   <p>The correct approach is <strong>nested cross-validation</strong>: an outer loop for honest performance estimation, an inner loop for model selection. The outer loop's test folds are never touched during model selection; the inner loop handles hyperparameter and model choice. The outer loop's scores then represent an honest estimate of the performance of the selection procedure itself.</p>
 
@@ -396,24 +396,24 @@ outer_cv = 5   # for honest generalization estimate
 param_grid = {'alpha': [0.01, 0.1, 1.0, 10.0]}
 inner_search = GridSearchCV(Ridge(), param_grid, cv=inner_cv)
 
-# Outer CV never sees which alpha was chosen — honest estimate
+# Outer CV never sees which alpha was chosen - honest estimate
 outer_scores = cross_val_score(inner_search, X, y, cv=outer_cv)
 print(f"Honest generalization estimate: {outer_scores.mean():.3f}")</code></pre>
 
-  <p>In practice, nested CV produces estimates that are somewhat lower than the simple CV score on the best model. That is not a failure of nested CV — it is an accurate correction of the optimistic bias that the simple approach introduces.</p>
+  <p>In practice, nested CV produces estimates that are somewhat lower than the simple CV score on the best model. That is not a failure of nested CV - it is an accurate correction of the optimistic bias that the simple approach introduces.</p>
 
   <h2>The checklist: when a CV score is actually informative</h2>
 
   <div class="checklist">
     <div class="checklist-title">Cross-Validation Validity Checklist</div>
     <ul style="list-style:none;padding:0;">
-      <li style="font-family:'IBM Plex Sans',sans-serif;font-size:0.9rem;padding:0.4rem 0;border-bottom:1px solid #e8e8e8;color:#333;">All preprocessing is inside a Pipeline — no fit_transform called on full data before CV</li>
+      <li style="font-family:'IBM Plex Sans',sans-serif;font-size:0.9rem;padding:0.4rem 0;border-bottom:1px solid #e8e8e8;color:#333;">All preprocessing is inside a Pipeline - no fit_transform called on full data before CV</li>
       <li style="font-family:'IBM Plex Sans',sans-serif;font-size:0.9rem;padding:0.4rem 0;border-bottom:1px solid #e8e8e8;color:#333;">For temporal data: TimeSeriesSplit used, not KFold(shuffle=True)</li>
       <li style="font-family:'IBM Plex Sans',sans-serif;font-size:0.9rem;padding:0.4rem 0;border-bottom:1px solid #e8e8e8;color:#333;">Model selection done inside a nested CV or on a completely separate validation set</li>
       <li style="font-family:'IBM Plex Sans',sans-serif;font-size:0.9rem;padding:0.4rem 0;border-bottom:1px solid #e8e8e8;color:#333;">Target leakage checked: no feature derived from y is included in X</li>
       <li style="font-family:'IBM Plex Sans',sans-serif;font-size:0.9rem;padding:0.4rem 0;border-bottom:1px solid #e8e8e8;color:#333;">The standard deviation of fold scores is reported alongside the mean</li>
-      <li style="font-family:'IBM Plex Sans',sans-serif;font-size:0.9rem;padding:0.4rem 0;border-bottom:1px solid #e8e8e8;color:#333;">k is appropriate for dataset size — k=5 or k=10 for most datasets; leave-one-out only for very small n</li>
-      <li style="font-family:'IBM Plex Sans',sans-serif;font-size:0.9rem;padding:0.4rem 0;color:#333;">StratifiedKFold used for classification with class imbalance — random splits may put no positives in some folds</li>
+      <li style="font-family:'IBM Plex Sans',sans-serif;font-size:0.9rem;padding:0.4rem 0;border-bottom:1px solid #e8e8e8;color:#333;">k is appropriate for dataset size - k=5 or k=10 for most datasets; leave-one-out only for very small n</li>
+      <li style="font-family:'IBM Plex Sans',sans-serif;font-size:0.9rem;padding:0.4rem 0;color:#333;">StratifiedKFold used for classification with class imbalance - random splits may put no positives in some folds</li>
     </ul>
   </div>
 
@@ -421,10 +421,10 @@ print(f"Honest generalization estimate: {outer_scores.mean():.3f}")</code></pre>
 
   <p>A CV score tells you, under certain assumptions, approximately how well the model is likely to perform on future data with the same distribution as the training data. The phrase "same distribution" is doing a lot of work. Market conditions change. User populations drift. Feature distributions shift when the product changes. A model that cross-validates at 0.83 R² on Delhi housing data from 2023 may perform materially worse on 2024 data if the real estate market has moved in ways the 2023 training data does not represent.</p>
 
-  <p>Cross-validation is a disciplined way to estimate historical generalization ability. It is not a guarantee of future performance. The three failure modes above — preprocessing leakage, temporal contamination, and selection bias — produce CV scores that overstate even the historical generalization ability. Fixing them gives you an honest estimate of a past quantity. What the model will do in production is a separate question, and answering it requires monitoring, not just a CV score at training time.</p>
+  <p>Cross-validation is a disciplined way to estimate historical generalization ability. It is not a guarantee of future performance. The three failure modes above - preprocessing leakage, temporal contamination, and selection bias - produce CV scores that overstate even the historical generalization ability. Fixing them gives you an honest estimate of a past quantity. What the model will do in production is a separate question, and answering it requires monitoring, not just a CV score at training time.</p>
 
   <div class="end-rule">
-    CONTEXT: Cross-Validation with Linear Regression notebook — Housing.csv and CarPrice_Assignment.csv datasets; polynomial regression experiments to demonstrate overfitting; k-fold evaluation for model selection. STACK: scikit-learn, NumPy, Pandas. KEY PATTERNS: Pipeline wrapper for preprocessing, StratifiedKFold for imbalanced classification, TimeSeriesSplit for temporal data, nested CV for honest selection-adjusted estimates.
+    CONTEXT: Cross-Validation with Linear Regression notebook - Housing.csv and CarPrice_Assignment.csv datasets; polynomial regression experiments to demonstrate overfitting; k-fold evaluation for model selection. STACK: scikit-learn, NumPy, Pandas. KEY PATTERNS: Pipeline wrapper for preprocessing, StratifiedKFold for imbalanced classification, TimeSeriesSplit for temporal data, nested CV for honest selection-adjusted estimates.
   </div>
 
 </div>
